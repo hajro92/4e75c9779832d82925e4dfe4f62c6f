@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Racuni</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="izgled.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
+  <script src="jquery.min.js"></script>
+  <script src="moment.min.js"></script>
+  <script src="jquery.md5.js"></script>
+  <script src="funkcije.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body onload="fje()">
+  <div class='container'>
+    <div class="row">
+		<div class="col-md-4 col-md-push-4" id="racun_komplet">
+			<div id="racuni_uvod">
+				<img src="racuni_uvod.png">
+				<div class="text_uvodni">
+					<span id="trgovina"></span><br>
+					Podružnica <span id="mjesto"></span><br>
+					<span id="adresa"></span><br>
+					<span id="zip"></span>
+				</div>
+				<div class="jibpib">
+					JIB: 4<span id="jib_text"></span><br>
+					PIB: <span id="pib_text"></span><br><br>
+					IBFM: <span id="ibfm_text"></span>
+				</div>
+				<div class="fiskalni">
+					FISKALNI RAČUN
+				</div>
+				<div class="bf">
+					BF: <span id="bf_text"></span><br>
+					<span id="datum_vrijeme"></span>
+				</div>
+			</div>
+			<div id="racuni_artikli">
+				<img id="pozadina_rc" src="racuni_pozadina.png">
+				<div id="artikli_text"></div>
+				<div class="cijene" id="cijene_l"></div>
+				<div class="cijene" id="cijene_s"></div>
+				<div class="cijene" id="cijene_d"></div>
+				
+			</div>
+			<div id="racuni_dno">
+				<span id="dno_lijevo">
+						VE: 17,00%<br>
+						PDV E:<br>
+						PDV:<br><br>
+						<b>TOTAL</b>:<br>
+						UPLAĆENO:<br>
+						Kartica:<br>
+						UKUPNO:<br>
+						POVRAT
+					</span>
+					<span id="dno_desno">
+					</span>
+					
+					<img src="racuni_dno.png">
+				
+			</div>
+			<img id="qr" width="75" height="75">
+			<span id="randombroj"></span>
+		</div>
+	</div>
+  </div>
+</body>
+</html>
