@@ -19,6 +19,23 @@ function randomString(length, chars) {
     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
 }
+ 
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
 
 function fje(){
 	let jibpib = getRandomTenDigit();
@@ -119,8 +136,7 @@ function fje(){
 	$("#adresa").text(adrese[random_adrese]);
 	
 
-	
-	const artikli = [
+	const organsko = [
 		"Organic Carrots 700G", 
 		"Organic Oats 750G",
 		"Organic Green Beans", 
@@ -130,8 +146,6 @@ function fje(){
 		"Organic Whole Cucumber", 
 		"Organic Garlic 3 Pack", 
 		"Organic Celery", 
-		"Air Fryer Fajita 27g", 
-		"Wagg Low Fat Dog Treats", 
 		"Organic Blueberries 150G", 
 		"Red Seedless Grapes 500G", 
 		"Organska Rezana Mrkva ", 
@@ -142,36 +156,63 @@ function fje(){
 		"Organski Crveni Luk", 
 		"Organska Borovnica", 
 		"Organski Avokado", 
-		"Vrecica PEP plasticna", 
-		"Organsko Grozdje 500G", 
-		"Jaja konzumna 500G", 
+		"Organsko Grozdje 500G",
+		"Organski sampinjoni",
+		"Org. Kivi", 
+		"Org. Brusnica", 
+		"Organic millet balls"
+	]
+	
+	const vocepovrce = [
+		"SOK FRUC: Borovnica 1l", 
+		"SOK cvekla domaci 1l", 
+		"Limun", 
+		"Kiseli krastavci", 
 		"Grozdjice suhe", 
 		"Svjeza mandarina", 
 		"Svjeza banana premium", 
+		"Prasa", 
+		"Engleska salata", 
+		"Mandarine", 
+		"Klementine svjeze", 
+		"Paprike domace roge", 
+		"Svjezi sampinjoni 300g", 
+		"Jabuka idared 1 klasa", 
+		"GROŽĐE crno domaće", 
+		"Kivi 1kg rinfuza", 
+		"Banana 1kg/kg", 
+		"Balans obrok jagoda", 
+		"Balans obrok banana", 
+		"Balans obrok višnja", 
+		"Brusnica 100g",
+		"Grah Trešnjevac",
+		"Oslić Hoki",
+		"Rezani Šampinjoni",
+		"Grašak",
+		"Datulja 200g",
+		"Carsko povrce 400g",
+		"Cappy Apple nektar",
+		"Sok mrkva-pom fruc",
+		"Nektar jagoda 45%",
+		"Kupus svjezi 1kg"
+	]
+	
+	const artikli = [ 
+		"Jaja konzumna 500G", 
 		"Hljeb crni", 
 		"Kikiriki u ljusci", 
 		"Svjezi pileci file", 
-		"Prasa", 
-		"Engleska salata", 
 		"Kecap blagi", 
 		"Kecap ljuti", 
 		"Govedji gulas", 
 		"Crveni grah podravka", 
 		"Tuna rio mare", 
-		"Kiseli krastavci", 
-		"Mandarine", 
-		"Org. Kivi", 
-		"Org. Brusnica", 
-		"Klementine svjeze", 
-		"Org. Sampinjoni", 
-		"Paprike domace roge", 
 		"Mlijeko 2L Dukat", 
 		"Pljeskvica pileca madi", 
 		"Makaroni vijak barilla", 
 		"Kobasica rostiljska ", 
 		"Pavlaka kisela kravica", 
 		"Kocka za supu podravka", 
-		"Limun", 
 		"Cokolada Milka malina", 
 		"Orbit zvakace", 
 		"Svjezi sir", 
@@ -190,26 +231,9 @@ function fje(){
 		"Kroasan mini",
 		"Kurkuma mljevena", 
 		"RedBull energy drink", 
-		"SOK FRUC: Borovnica 1l", 
-		"SOK cvekla domaci 1l", 
-		"Svjezi sampinjoni 300g", 
-		"Jabuka idared 1 klasa", 
-		"GROŽĐE crno domaće", 
-		"Kivi 1kg rinfuza", 
-		"Banana 1kg/kg", 
-		"Balans obrok jagoda", 
-		"Balans obrok banana", 
-		"Balans obrok višnja", 
-		"Brusnica 100g",
-		"Grah Trešnjevac",
-		"Oslić Hoki",
-		"Rezani Šampinjoni",
-		"Grašak",
-		"Datulja 200g",
 		"Tuna u biljnom ulju",
 		"Cvijetni med",
 		"Riža okruglo zrno",
-		"Organic millet balls",
 		"Pistacije 80g",
 		"Sok Aronija 700ml",
 		"Sok Jabuka nektar",
@@ -218,11 +242,6 @@ function fje(){
 		"Sok natura aronija",
 		"Puding coko-banana",
 		"Puding borovnica",
-		"Carsko povrce 400g",
-		"Cappy Apple nektar",
-		"Sok mrkva-pom fruc",
-		"Nektar jagoda 45%",
-		"Kupus svjezi 1kg",
 		"Doner juneci",
 		"Donat MG Mivela",
 		"Hrenovka pileca",
@@ -234,15 +253,29 @@ function fje(){
 		"Pita od jabuka",
 		"Karfiol 400g",
 		"Kuskus mediteranski",
+		"Čarape muške XL",
+		"Ukrasno cvijeće",
+		"Plišani medo igračka",
+		"Potkošulja muška",
+		"Tečnost za suđe",
+		"Toalet papir",
+		"Kuhinjski ubrus Maca",
+		"Mlijeko u prahu",
+		"Voda flaširana 5L",
 		]
 
 
-	let broj_artikala = getRndInteger(10, 22);
+	let broj_artikala = getRndInteger(7,10);
+	let broj_artikala_voce = getRndInteger(2,5);
+	let broj_artikala_organsko = getRndInteger(2,5);
+	
 	artikli_text = '';
 	artikli_cijene_l = '';artikli_cijene_s = '';artikli_cijene_d = '';
 	
 	
 	artikli_spisak = [];
+	
+	// artikli obicni loop
 	lopaj = false;
 
 	ii = broj_artikala+1;
@@ -261,17 +294,61 @@ function fje(){
 	}
 	while (lopaj); 
 	
-	console.log(artikli_spisak);
+	// artikli voce loop
+	lopaj = false;
+	ii = broj_artikala_voce+1;
+	do {
+		lopaj = true;
+		random_artikal = Math.floor(Math.random() * vocepovrce.length);
+		if(artikli_spisak.indexOf(vocepovrce[random_artikal]) >= 0){
+			
+		}else{
+			artikli_spisak.push(vocepovrce[random_artikal]);
+			ii--;
+		}
+		if(ii <= 0) {
+			lopaj = false;
+		}
+	}
+	while (lopaj); 
 	
+	
+	
+	// artikli organsko loop
+	lopaj = false;
+
+	ii = broj_artikala_organsko+1;
+	do {
+		lopaj = true;
+		random_artikal = Math.floor(Math.random() * organsko.length);
+		if(artikli_spisak.indexOf(organsko[random_artikal]) >= 0){
+			
+		}else{
+			artikli_spisak.push(organsko[random_artikal]);
+			ii--;
+		}
+		if(ii <= 0) {
+			lopaj = false;
+		}
+	}
+	while (lopaj); 
+	
+	//const artikli_spisak2 = artikli_spisak.sort((a,b) => 0.5 - Math.random());
+	let artikli_spisak2 = artikli_spisak;
+	shuffle(artikli_spisak);
 	
 	let osnovica = 0;
+	console.log(artikli_spisak2);
+	let broj_artikala_sve = parseInt(broj_artikala) + parseInt(broj_artikala_organsko) + parseInt(broj_artikala_voce);
 	
-	for (let i = 0; i <= broj_artikala; i++) {
+	console.log(broj_artikala_sve);
+	
+	for (let i = 0; i <= broj_artikala_sve; i++) {
 		let rndArtikalCode = randomString(2, "AHBEGOPMNR") + getRndInteger(1000, 9999);
-		artikli_text += rndArtikalCode + " "+ artikli_spisak[i] + "<br><br>";
+		artikli_text += rndArtikalCode + " "+ artikli_spisak2[i] + "<br><br>";
 		
-		kolicina_artikla = getRndInteger(1,3);
-		artikal_cijena = randomDecc(5.00);
+		kolicina_artikla = getRndInteger(1,2);
+		artikal_cijena = randomDecc(2.95);
 		
 		artikli_cijene_l += kolicina_artikla+".000x<br><br>";
 		artikli_cijene_s += artikal_cijena+"KM<br><br>";
@@ -296,7 +373,7 @@ function fje(){
 		mob_w = 58;
 	}
 		
-	let sirina = broj_artikala * mob_w;
+	let sirina = broj_artikala_sve * mob_w;
 	$("#pozadina_rc").height(sirina);
 	
 	console.log("osnovica:"+osnovica);
