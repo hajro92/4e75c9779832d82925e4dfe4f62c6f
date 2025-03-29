@@ -139,6 +139,7 @@ b, strong {
   position: absolute;
   font-size: 15px;
   margin-left: 65px;
+  display:none;
 }
 
 #qr {
@@ -148,6 +149,12 @@ b, strong {
   bottom: 65px;
   left: 155px;
   opacity: 0;
+}
+
+#barcode {
+	position: absolute;
+    bottom: 2px;
+    left: 17px;
 }
 
 #racun_komplet {
@@ -247,6 +254,7 @@ b, strong {
 	#randombroj {
 	  margin-top: -70px;
 	  font-size: 27px;
+	  display:none;
 	}
 	
 	#qr {
@@ -256,6 +264,11 @@ b, strong {
   bottom: 121px;
   left: 226px;
   opacity: 0;
+}
+
+#barcode {
+	bottom: 15px;
+    left: 120px;
 }
 	
 } 

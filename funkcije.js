@@ -48,7 +48,7 @@ function fje(){
 	$("#ibfm_text").text(ibfm);
 	$("#bf_text").text(bf);
 	
-	var datumvrijeme = moment().subtract(Math.floor(Math.random() * 5) + 1, 'hours').format('DD.MM.YYYY HH:mm');
+	var datumvrijeme = moment().subtract(Math.floor(Math.random() * 1800) + 1, 'minutes').format('DD.MM.YYYY HH:mm:ss');
 	
 	$("#datum_vrijeme").text(datumvrijeme);
 	
@@ -137,17 +137,6 @@ function fje(){
 	
 
 	const organsko = [
-		"Organic Carrots 700G", 
-		"Organic Oats 750G",
-		"Organic Green Beans", 
-		"Organic Red Onions", 
-		"Organic Spinach 200G", 
-		"Organic Bunched Carrots", 
-		"Organic Whole Cucumber", 
-		"Organic Garlic 3 Pack", 
-		"Organic Celery", 
-		"Organic Blueberries 150G", 
-		"Red Seedless Grapes 500G", 
 		"Organska Rezana Mrkva ", 
 		"Organski Krompir 200G", 
 		"Organska Salata 750G", 
@@ -155,12 +144,12 @@ function fje(){
 		"Organska Cvekla 225G", 
 		"Organski Crveni Luk", 
 		"Organska Borovnica", 
+		"Organski Grasak", 
 		"Organski Avokado", 
 		"Organsko Grozdje 500G",
 		"Organski sampinjoni",
 		"Org. Kivi", 
-		"Org. Brusnica", 
-		"Organic millet balls"
+		"Org. Brusnica"
 	]
 	
 	const vocepovrce = [
@@ -265,9 +254,9 @@ function fje(){
 		]
 
 
-	let broj_artikala = getRndInteger(5,9);
-	let broj_artikala_voce = getRndInteger(1,3);
-	let broj_artikala_organsko = getRndInteger(2,4);
+	let broj_artikala = getRndInteger(3,6);
+	let broj_artikala_voce = getRndInteger(2,3);
+	let broj_artikala_organsko = getRndInteger(1,2);
 	
 	artikli_text = '';
 	artikli_cijene_l = '';artikli_cijene_s = '';artikli_cijene_d = '';
@@ -390,5 +379,15 @@ function fje(){
 	console.log(rndBright);
 	$('html').css({'background-image':'url(pozadine/'+poz+'.jpg)', 'transform': 'rotate('+rndrot+'deg)'});
 	$("#racun_komplet").css({"filter": "brightness("+rndBright+"%)"});
+	
+	JsBarcode("#barcode",total, {
+  format: "CODE39",
+  lineColor: "#00000082",
+  background: "#ffffff00",
+  displayValue: false,
+  width: 3,
+  height: 35,
+  textAlign: "center"
+});
 	
 }
