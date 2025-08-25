@@ -254,8 +254,8 @@ function fje(){
 		]
 
 
-	let broj_artikala = getRndInteger(2,3);
-	let broj_artikala_voce = getRndInteger(2,3);
+	let broj_artikala = getRndInteger(2,4);
+	let broj_artikala_voce = getRndInteger(2,4);
 	let broj_artikala_organsko = getRndInteger(3,4);
 	
 	artikli_text = '';
