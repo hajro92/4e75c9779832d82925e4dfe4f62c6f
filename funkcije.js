@@ -254,7 +254,7 @@ function fje(){
 		]
 
 
-	let broj_artikala = getRndInteger(2,4);
+	let broj_artikala = getRndInteger(4,7);
 	let broj_artikala_voce = getRndInteger(2,4);
 	let broj_artikala_organsko = getRndInteger(3,4);
 	
@@ -355,7 +355,7 @@ function fje(){
 	$("#cijene_s").html(artikli_cijene_s);
 	$("#cijene_d").html(artikli_cijene_d);
 	
-	$("#dno_desno").html("<br>"+osnovica.toFixed(2)+"KM<br>"+pdv+"KM<br><br><b>"+total+"KM</b><br>"+total+"KM<br>"+total+"KM<br>"+total+"KM<br>0.00KM");
+	$("#dno_desno").html("<br>"+osnovica.toFixed(2)+"KM<br>"+pdv+"KM<br><br><b>"+total+"KM</b><br>"+total+"KM<br>"+total+"KM<br>"+total+"KM<br>"+getRndInteger(5,15)+"%");
 	
 	mob_w = 38;
 	if(window.innerWidth <=1024) {
